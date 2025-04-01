@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
         "--gradient-y": "calc(var(--mouse-y, 0.5) * 100%)",
       } as React.CSSProperties}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--gradient-x)_var(--gradient-y),rgba(120,120,128,0.15),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--gradient-x)_var(--gradient-y),rgba(226,187,227,0.15),transparent_50%)]" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -51,9 +51,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight tracking-tight mb-6">
-            <span className="block">Creative Designer &</span>
-            <span className="block">Digital Developer</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-purple-400">
+            <span className="block">Shivam Singh</span>
           </h1>
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
             Creating delightful digital experiences through thoughtful design and
@@ -61,10 +60,10 @@ const Hero: React.FC = () => {
           </p>
           <div className="mt-10">
             <a
-              href="#work"
-              className="inline-flex items-center justify-center text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 rounded-lg px-6 py-3"
+              href="#about"
+              className="inline-flex items-center justify-center text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 border border-purple-800 bg-purple-900/30 hover:bg-purple-800/50 text-purple-200 rounded-lg px-6 py-3"
             >
-              View My Work
+              Learn More
             </a>
           </div>
         </motion.div>
@@ -72,7 +71,7 @@ const Hero: React.FC = () => {
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <a href="#about" aria-label="Scroll down">
-          <ArrowDown size={24} className="text-zinc-500" />
+          <ArrowDown size={24} className="text-purple-300" />
         </a>
       </div>
     </section>

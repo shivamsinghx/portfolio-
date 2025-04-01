@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       y: mousePosition.y,
       height: 32,
       width: 32,
-      backgroundColor: "white",
+      backgroundColor: "#e2bbe3",
       opacity: 0.4,
     },
     text: {
@@ -38,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       y: mousePosition.y,
       height: 64,
       width: 64,
-      backgroundColor: "white",
+      backgroundColor: "#e2bbe3",
       opacity: 0.2,
       mixBlendMode: "difference" as const,
     },

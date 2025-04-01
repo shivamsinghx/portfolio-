@@ -1,15 +1,17 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Mail, Linkedin } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showName, setShowName] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      setShowName(window.scrollY > window.innerHeight * 0.7);
     };
     
     window.addEventListener("scroll", handleScroll);
@@ -17,9 +19,9 @@ const Header: React.FC = () => {
   }, []);
   
   const navItems = [
-    { title: "Home", href: "#home" },
     { title: "About", href: "#about" },
-    { title: "Work", href: "#work" },
+    { title: "Projects", href: "#projects" },
+    { title: "Skills", href: "#skills" },
     { title: "Contact", href: "#contact" },
   ];
 
@@ -36,15 +38,19 @@ const Header: React.FC = () => {
     <header
       className={cn(
         "fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12",
-        scrolled ? "bg-zinc-950/90 backdrop-blur-sm" : "bg-transparent"
+        scrolled ? "bg-zinc-950/90 backdrop-blur-sm border-b border-purple-800/30" : "bg-transparent"
       )}
     >
       <div className="flex items-center justify-between">
         <a
           href="/"
-          className="font-display text-xl font-bold tracking-tighter"
+          className="font-display text-xl font-bold tracking-tighter flex items-center gap-2"
         >
-          Portfolio
+          {showName ? (
+            <span className="animate-nav-name-slide">Shivam Singh</span>
+          ) : (
+            "Portfolio"
+          )}
         </a>
 
         {/* Desktop Navigation */}
@@ -54,7 +60,7 @@ const Header: React.FC = () => {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-zinc-400 hover:text-zinc-50 transition-colors duration-200"
+                  className="text-zinc-300 hover:text-purple-300 transition-colors duration-200"
                 >
                   {item.title}
                 </a>
@@ -82,7 +88,7 @@ const Header: React.FC = () => {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-2xl font-display text-zinc-200 hover:text-white transition-colors duration-200"
+                    className="text-2xl font-display text-zinc-200 hover:text-purple-300 transition-colors duration-200"
                     onClick={() => {
                       toggleMenu();
                     }}

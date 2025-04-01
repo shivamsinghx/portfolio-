@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -66,6 +65,18 @@ export default {
 					900: '#18181b',
 					950: '#09090b',
 				},
+				purple: {
+					50: '#f9f0fa',
+					100: '#f3e1f5',
+					200: '#e9c8ed',
+					300: '#e2bbe3',
+					400: '#d49ad7',
+					500: '#c67bcb',
+					600: '#b55fb8',
+					700: '#a24ea8',
+					800: '#8a4690',
+					900: '#733c77',
+				},
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
@@ -100,6 +111,14 @@ export default {
 				'spotlight': {
 					'0%': { opacity: '0', transform: 'translate(-50%, -50%) scale(0.5)' },
 					'100%': { opacity: '1', transform: 'translate(-50%, -50%) scale(1)' }
+				},
+				'header-slide': {
+					'0%': { transform: 'translateY(-100%)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'nav-name-slide': {
+					'0%': { transform: 'translateX(-20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -108,7 +127,9 @@ export default {
 				'fade-in': 'fade-in 1s ease-in-out forwards',
 				'fade-up': 'fade-up 0.5s ease-out forwards',
 				'marquee': 'marquee 25s linear infinite',
-				'spotlight': 'spotlight 2s ease forwards'
+				'spotlight': 'spotlight 2s ease forwards',
+				'header-slide': 'header-slide 0.5s ease-out',
+				'nav-name-slide': 'nav-name-slide 0.3s ease-out'
 			}
 		}
 	},

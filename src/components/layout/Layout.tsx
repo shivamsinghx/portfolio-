@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
   }, []);
   
-  const variants = {
+  const variants: Variants = {
     default: {
       x: mousePosition.x,
       y: mousePosition.y,
@@ -40,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       width: 64,
       backgroundColor: "white",
       opacity: 0.2,
-      mixBlendMode: "difference",
+      mixBlendMode: "difference" as const,
     },
   };
 

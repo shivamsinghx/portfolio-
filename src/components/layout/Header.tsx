@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Header: React.FC = () => {
@@ -41,12 +40,12 @@ const Header: React.FC = () => {
       )}
     >
       <div className="flex items-center justify-between">
-        <Link
-          to="/"
+        <a
+          href="/"
           className="font-display text-xl font-bold tracking-tighter"
         >
           Portfolio
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
